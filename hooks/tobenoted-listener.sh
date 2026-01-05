@@ -12,7 +12,7 @@ if echo "$prompt" | grep -qi "tobenoted"; then
   jq -n '{
     "hookSpecificOutput": {
       "hookEventName": "UserPromptSubmit",
-      "additionalContext": "TOBENOTED TRIGGERED: The user mentioned '\''tobenoted'\''. Extract the note/observation they described and add it to /home/secureuser/queens/queens-game/TOBENOTED.md under the \"Notes\" section. Format: add a new bullet point with today'\''s date. After adding, briefly confirm what was logged."
+      "additionalContext": "TOBENOTED TRIGGERED: The user mentioned '\''tobenoted'\''. Extract the note/observation they described and add it to /home/secureuser/queens/queens-game/TOBENOTED.md under the \"Notes\" section. Format: `- [N-XXXX] (YYYY-MM-DD) note text` where XXXX is a random 4-char alphanumeric ID. After adding, briefly confirm what was logged with its ID."
     }
   }'
 else

@@ -12,7 +12,7 @@ if echo "$prompt" | grep -qi "tobefix"; then
   jq -n '{
     "hookSpecificOutput": {
       "hookEventName": "UserPromptSubmit",
-      "additionalContext": "TOBEFIX TRIGGERED: The user mentioned '\''tobefix'\''. Extract the task/issue they described and add it to /home/secureuser/queens/queens-game/TOBEFIX.md. Format: add a new bullet point under the appropriate section (or create a section if needed). Include today'\''s date. After adding, briefly confirm what was logged."
+      "additionalContext": "TOBEFIX TRIGGERED: The user mentioned '\''tobefix'\''. Extract the task/issue they described and add it to /home/secureuser/queens/queens-game/TOBEFIX.md. Format: `- [F-XXXX] (YYYY-MM-DD) task text` where XXXX is a random 4-char alphanumeric ID. Add under appropriate section. After adding, briefly confirm what was logged with its ID."
     }
   }'
 else
