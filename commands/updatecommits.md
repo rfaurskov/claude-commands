@@ -15,7 +15,7 @@ Backfill missing or stale daily commit summaries in `.commits/` folder.
    ```
 
 3. **For each date with commits (excluding today):**
-   - Check if `.commits/commits-YYYY-MM-DD.txt` exists
+   - Check if `.commits/commits-YYYY-MM-DD.md` exists
    - If missing, create it
    - If exists, check if stale (modified before last commit of that day)
    - Get commits for that day:
