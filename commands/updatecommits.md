@@ -11,11 +11,11 @@ Backfill missing or stale daily commit summaries in `.commits/` folder.
 
 2. **Check existing summaries:**
    ```bash
-   ls -la .commits/ 2>/dev/null || mkdir -p .commits
+   ls -la .commits/
    ```
 
 3. **For each date with commits (excluding today):**
-   - Check if `.commits/YYYY-MM-DD.md` exists
+   - Check if `.commits/commits-YYYY-MM-DD.txt` exists
    - If missing, create it
    - If exists, check if stale (modified before last commit of that day)
    - Get commits for that day:
@@ -24,15 +24,17 @@ Backfill missing or stale daily commit summaries in `.commits/` folder.
      ```
 
 4. **Summary file format:**
-   ```markdown
-   # Commits for YYYY-MM-DD
+   ```
+   Commits for YYYY-MM-DD
+   ======================
 
-   | Hash | Message |
-   |------|---------|
-   | abc1234 | Commit message here |
-   | def5678 | Another commit |
+   Hash     Message
+   -------  ----------------------------------------
+   abc1234  Commit message here
+   def5678  Another commit
 
-   ## Summary
+   Summary
+   -------
    Brief description of what was accomplished this day.
    ```
 
