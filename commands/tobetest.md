@@ -17,7 +17,7 @@ Parse the arguments to determine the action:
 4. Update the "Last checked" comment with HEAD commit and today's date
 5. **Format pending commits as clickable links:**
    ```
-   [abc1234](https://github.com/rfaurskov/queens-game/commit/abc1234) - Commit message
+   [abc1234](https://github.com/rfaurskov/playqueens/commit/abc1234) - Commit message
    ```
 6. Report how many new commits were added
 
