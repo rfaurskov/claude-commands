@@ -27,20 +27,46 @@ Backfill missing or stale daily commit summaries in `.commits/` folder.
      git log --format='%h %s' --after='YYYY-MM-DD 00:00' --before='YYYY-MM-DD 23:59:59' --reverse
      ```
 
-4. **Summary file format:**
+4. **Summary file format** (follow `.commits/commits-2026-01-01.md` as reference):
    ```
-   Commits for YYYY-MM-DD
-   ======================
+   COMMITS SUMMARY - YYYY-MM-DD
+   ============================
 
-   Hash     Message
-   -------  ----------------------------------------
-   abc1234  Commit message here
-   def5678  Another commit
+   Total: NN commits
 
-   Summary
-   -------
-   Brief description of what was accomplished this day.
+   ================================================================================
+   SECTION NAME (e.g., FEATURE AREA)
+   ================================================================================
+
+   abc1234 - Commit message here
+   def5678 - Another related commit
+
+   NEW FILES:
+     - path/to/file.ts          (Brief description)
+     - path/to/another.tsx      (What it does)
+
+   MODIFIED:
+     - src/components/Foo.tsx   (What changed)
+
+   DATABASE:
+     - table_name table
+     - another_table view
+
+   TO TEST:
+     [ ] Test item 1
+     [ ] Test item 2
+
+   ================================================================================
+   ANOTHER SECTION
+   ================================================================================
+   ... more commits grouped by feature/area ...
    ```
+
+   **Key principles:**
+   - Group commits by feature/area (not chronological flat list)
+   - Include NEW FILES, MODIFIED, DATABASE sections where relevant
+   - Add TO TEST checklists for testable features
+   - Use `================` separators between sections
 
 5. **Skip today's date** - only backfill completed days.
 
