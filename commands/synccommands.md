@@ -1,19 +1,30 @@
 # Sync Commands from claude-commands repo
 
-Pull latest slash commands from the shared `claude-commands` repository.
+Pull latest commands and hooks from the shared `claude-commands` repository.
+
+## Repository Structure
+
+The claude-commands repo contains:
+```
+claude-commands/
+  commands/     # Slash commands (.md files)
+  hooks/        # Event listeners (.sh files)
+```
 
 ## Instructions
 
-Run this command to update `.claude/commands/` with the latest from the shared repo:
+**Pull latest from shared repo:**
 
 ```bash
-git subtree pull --prefix=.claude/commands https://github.com/rfaurskov/claude-commands.git main --squash
+git subtree pull --prefix=.claude https://github.com/rfaurskov/claude-commands.git main --squash
 ```
 
-If you've made local changes to commands that should go back to the shared repo:
+**Push local changes to shared repo:**
 
 ```bash
-git subtree push --prefix=.claude/commands https://github.com/rfaurskov/claude-commands.git main
+git subtree push --prefix=.claude https://github.com/rfaurskov/claude-commands.git main
 ```
+
+**Note:** The subtree syncs the entire `.claude/` folder (commands + hooks), excluding `settings.json` and `settings.local.json` which are project-specific.
 
 Report what was updated.

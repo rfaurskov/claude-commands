@@ -15,7 +15,10 @@ Parse the arguments to determine the action:
 2. Find all commits since then: `git log --oneline <last_hash>..HEAD`
 3. Add new commits to the "Pending Review" section
 4. Update the "Last checked" comment with HEAD commit and today's date
-5. Format for commits: `<hash> - <message>`
+5. **Format pending commits as clickable links:**
+   ```
+   [abc1234](https://github.com/rfaurskov/queens-game/commit/abc1234) - Commit message
+   ```
 6. Report how many new commits were added
 
 **Output format:**
