@@ -13,17 +13,17 @@ Hooks are shell scripts that:
 
 | Hook | Triggers On | Action |
 |------|-------------|--------|
-| `tobefix-listener.sh` | "tobefix" | Add/remove/search items in TOBEFIX.md |
-| `tobetested-listener.sh` | "tobetested" | Track test notes in TOBETESTED.md |
-| `tobenoted-listener.sh` | "tobenoted" | Add notes to TOBENOTED.md |
-| `definitions-listener.sh` | definition-related terms | Check/update DEFINITIONS.md |
+| `tobefix-listener.sh` | "tobefix" | Add/remove/search items in docs/TOBEFIX.md |
+| `tobetested-listener.sh` | "tobetested" | Track test notes in docs/TOBETESTED.md |
+| `tobenoted-listener.sh` | "tobenoted" | Add notes to docs/TOBENOTED.md |
+| `definitions-listener.sh` | definition-related terms | Check/update docs/DEFINITIONS.md |
 
 ## tobefix-listener Actions
 
 | Pattern | Action |
 |---------|--------|
-| "tobefix" + description | ADD item to TOBEFIX.md |
-| "tobefix done" / "done tobefix" | REMOVE item from TOBEFIX.md |
+| "tobefix" + description | ADD item to docs/TOBEFIX.md |
+| "tobefix done" / "done tobefix" | REMOVE item from docs/TOBEFIX.md |
 | "check tobefix" / "show tobefix" | LIST/SEARCH items |
 
 ## Setup

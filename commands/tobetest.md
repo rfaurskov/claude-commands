@@ -1,6 +1,6 @@
 # Commit Testing Workflow
 
-Manage commit verification in `TOBETESTED.md`.
+Manage commit verification in `docs/TOBETESTED.md`.
 
 **Arguments:** $ARGUMENTS
 
@@ -30,7 +30,7 @@ Added X new commit(s) to Pending Review:
 
 ### `next` - Show commits pending review
 
-1. Read `TOBETESTED.md` "Pending Review" section
+1. Read `docs/TOBETESTED.md` "Pending Review" section
 2. If empty, check for unverified commits (not in Verified list)
 3. Show up to 10 commits needing review, oldest first
 
@@ -50,7 +50,7 @@ Use `/tobetest ok <hash> [hash2] ...` to verify.
 1. Parse all commit hashes from arguments (space-separated after "ok")
 2. For each hash:
    - Validate it's a real commit: `git log -1 --format='%h - %s' <hash>`
-   - If valid, add to `TOBETESTED.md` under "Verified Commits" section
+   - If valid, add to `docs/TOBETESTED.md` under "Verified Commits" section
    - Remove from "Pending Review" section if present
 3. Add commits to the END of the verified list (before the closing ```)
 4. Format: `<hash> - <commit message>`
