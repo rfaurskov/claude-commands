@@ -17,12 +17,11 @@ Backfill missing or stale daily commit summaries in `.commits/` folder.
 3. **For each date with commits (excluding today):**
    - Check if `.commits/commits-YYYY-MM-DD.md` exists
    - If missing, create it
-   - If exists, check if stale: **file modified on the same day = incomplete** (generated before midnight)
-     ```bash
-     # File is stale if modified before midnight of that day
-     file_date=$(stat -c %y "$file" | cut -d' ' -f1)
-     if [ "$file_date" == "$date" ]; then echo "STALE"; fi
-     ```
+   - If exists, check if stale by comparing file modification date to the date in the filename:
+     - Extract date from filename: `commits-2026-01-03.md` → `2026-01-03`
+     - Get file's modification date from `ls -la` output
+     - **STALE if:** file modification date ≤ date in filename (was generated before midnight)
+     - **OK if:** file modification date > date in filename (was generated after that day ended)
    - Get commits for that day (use --reverse for chronological order):
      ```bash
      git log --format='%h %s' --after='YYYY-MM-DD 00:00' --before='YYYY-MM-DD 23:59:59' --reverse
