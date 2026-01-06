@@ -1,6 +1,6 @@
 # Update Commit Summaries
 
-Backfill missing or stale daily commit summaries in `.commits/` folder.
+Backfill missing or stale daily commit summaries in `commits/` folder.
 
 ## Instructions
 
@@ -11,11 +11,11 @@ Backfill missing or stale daily commit summaries in `.commits/` folder.
 
 2. **Check existing summaries:**
    ```bash
-   ls -la .commits/
+   ls -la commits/
    ```
 
 3. **For each date with commits (excluding today):**
-   - Check if `.commits/commits-YYYY-MM-DD.md` exists
+   - Check if `commits/commits-YYYY-MM-DD.md` exists
    - If missing, create it
    - If exists, check if stale by comparing file modification date to the date in the filename:
      - Extract date from filename: `commits-2026-01-03.md` → `2026-01-03`
@@ -27,7 +27,7 @@ Backfill missing or stale daily commit summaries in `.commits/` folder.
      git log --format='%h %s' --after='YYYY-MM-DD 00:00' --before='YYYY-MM-DD 23:59:59' --reverse
      ```
 
-4. **Summary file format** (follow `.commits/commits-2026-01-01.md` as reference):
+4. **Summary file format** (follow `commits/commits-2026-01-01.md` as reference):
    ```
    COMMITS SUMMARY - YYYY-MM-DD
    ============================
