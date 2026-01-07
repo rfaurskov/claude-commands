@@ -11,11 +11,26 @@ Hooks are shell scripts that:
 
 ## Available Hooks
 
+### TOBE* Tracking Hooks
+
 | Hook | Triggers On | Action |
 |------|-------------|--------|
 | `tobefix-listener.sh` | "tobefix" | Add/remove/search items in docs/TOBEFIX.md |
 | `tobetested-listener.sh` | "tobetested" | Track test notes in docs/TOBETESTED.md |
 | `tobenoted-listener.sh` | "tobenoted" | Add notes to docs/TOBENOTED.md |
+
+### Schema Documentation Hooks
+
+| Hook | Triggers On | Action |
+|------|-------------|--------|
+| `schema-listener.sh` | "update schema" | Provide SCHEMA.md context and domain organization |
+| `schema-migration-reminder.sh` | PostToolUse on `apply_migration` | Remind to update SCHEMA.md after migrations |
+| `schema-completeness-check.sh` | Every 24h | Audit missing table documentation |
+
+### Other Hooks
+
+| Hook | Triggers On | Action |
+|------|-------------|--------|
 | `definitions-listener.sh` | definition-related terms | Check/update docs/DEFINITIONS.md |
 
 ## tobefix-listener Actions
@@ -70,3 +85,10 @@ exit 0
 ```
 
 Make executable: `chmod +x hookname.sh`
+
+## Hook Types
+
+| Event | When |
+|-------|------|
+| `UserPromptSubmit` | Before processing user message |
+| `PostToolUse` | After a tool completes (use `matcher` to filter by tool name) |
