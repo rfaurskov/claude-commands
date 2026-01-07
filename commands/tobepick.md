@@ -1,6 +1,6 @@
 # Pick Task from TOBE Lists
 
-Present 3 task prospects from TOBEFIX and TOBETESTED for user to choose from.
+Present 3 task prospects from TOBEFIX and TOBENOTED for user to choose from.
 
 **Argument received:** $ARGUMENTS
 
@@ -8,7 +8,7 @@ Present 3 task prospects from TOBEFIX and TOBETESTED for user to choose from.
 
 1. **Read both files:**
    - `docs/TOBEFIX.md` - Tasks, bugs, improvements
-   - `docs/TOBETESTED.md` - Test notes section only
+   - `docs/TOBENOTED.md` - Notes and observations
 
 2. **Filter out completed items:**
    - Skip items marked ~~strikethrough~~ (done/fixed)
@@ -32,9 +32,9 @@ Present 3 task prospects from TOBEFIX and TOBETESTED for user to choose from.
 
 | Argument | Filter |
 |----------|--------|
-| (empty) | Mix of TOBEFIX and TOBETESTED items |
+| (empty) | Mix of TOBEFIX and TOBENOTED items |
 | `fix` | Only TOBEFIX items |
-| `test` | Only TOBETESTED items |
+| `note` | Only TOBENOTED items |
 | `bug` | Only items from Bugs section |
 | `feature` | Only items from Features section |
 | `quick` | Prioritize quick/simple tasks |
@@ -44,8 +44,8 @@ Present 3 task prospects from TOBEFIX and TOBETESTED for user to choose from.
 
 **Three prospects:**
 
-1. **[T-3f6y] Test** - How to Play Page: verify touch controls, auto-markers, Daily Challenge link
+1. **[F-5m2q] Bug** - MCP integrations check: verify GitHub and Vercel MCP servers work
 
-2. **[F-5m2q] Bug** - MCP integrations check: verify GitHub and Vercel MCP servers work
+2. **[F-3c4d] Feature** - Multiplayer stats: wire up real API calls for ELO history and win/loss data
 
-3. **[F-3c4d] Feature** - Multiplayer stats: wire up real API calls for ELO history and win/loss data
+3. **[N-7p8q] Note** - PuzzleCard modal layout improvements needed

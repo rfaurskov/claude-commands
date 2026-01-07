@@ -39,9 +39,9 @@ Commit verification workflow.
 Pick tasks to work on.
 
 ```
-/tobepick          # Mix of fix and test items
+/tobepick          # Mix of fix and note items
 /tobepick fix      # Only TOBEFIX items
-/tobepick test     # Only TOBETESTED items
+/tobepick note     # Only TOBENOTED items
 /tobepick quick    # Prioritize quick tasks
 /tobepick sticky   # Include sticky solver item
 ```
