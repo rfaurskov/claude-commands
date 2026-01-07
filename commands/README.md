@@ -11,7 +11,7 @@ Reusable slash commands for Claude Code sessions.
 | `/tobelist` | `fix\|test\|note\|all` | View TOBE* file contents |
 | `/tobetest` | `check\|next\|ok <hash>` | Commit verification workflow |
 | `/tobepick` | `fix\|test\|quick\|sticky` | Pick 3 task prospects from TOBE* files |
-| `/straynotes` | - | Clean up TODO.md, find stray code TODOs |
+| `/tobestray` | - | Find stray code TODOs, check stale refs |
 
 ## Command Details
 
@@ -52,11 +52,11 @@ Backfill missing daily commit summaries. Run at session start.
 ### /synccommands
 Sync with shared `claude-commands` repo via git subtree pull/push.
 
-### /straynotes
-Clean up workflow:
-- Find done items in TODO.md
-- Find stray `tobefix:` comments in code
-- Check for stale references
+### /tobestray
+Find stray code comments:
+- Search for TODO/TOBEFIX/FIXME comments in code
+- Check if they're tracked in TOBEFIX.md
+- Check for stale file references
 
 ## Creating New Commands
 
