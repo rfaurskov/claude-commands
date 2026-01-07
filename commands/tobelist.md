@@ -10,7 +10,7 @@ Based on the argument, show the appropriate file(s):
 
 | Argument | Action |
 |----------|--------|
-| `fix` | Show contents of `docs/TOBEFIX.md` |
+| `fix` | Show contents of `docs/TOBEFIXED.md` |
 | `test` or `tested` | Show contents of `docs/TOBETESTED.md` |
 | `note` or `noted` | Show contents of `docs/TOBENOTED.md` |
 | `all` | Show all three files |
@@ -22,6 +22,6 @@ Based on the argument, show the appropriate file(s):
 3. If showing summary only, count items in each section
 
 **Files location (all in `docs/`):**
-- `docs/TOBEFIX.md` - Tasks, bugs, improvements to fix
+- `docs/TOBEFIXED.md` - Tasks, bugs, improvements to fix
 - `docs/TOBETESTED.md` - Test notes and verified commits
 - `docs/TOBENOTED.md` - General notes and observations

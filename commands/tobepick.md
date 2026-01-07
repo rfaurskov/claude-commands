@@ -7,7 +7,7 @@ Present 3 task prospects from TOBEFIX and TOBENOTED for user to choose from.
 ## Instructions
 
 1. **Read both files:**
-   - `docs/TOBEFIX.md` - Tasks, bugs, improvements
+   - `docs/TOBEFIXED.md` - Tasks, bugs, improvements
    - `docs/TOBENOTED.md` - Notes and observations
 
 2. **Filter out completed items:**

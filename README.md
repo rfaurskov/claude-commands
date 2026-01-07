@@ -22,12 +22,12 @@ This folder contains Claude Code customizations: slash commands, hooks, and spec
 | `/tobelist` | View TOBE* file contents |
 | `/tobetest` | Commit verification workflow |
 | `/tobepick` | Pick 3 task prospects |
-| `/straynotes` | Clean up stale TODOs |
+| `/tobestray` | Find stray code TODOs |
 
 ### Hooks
 | Hook | Triggers |
 |------|----------|
-| `tobefix-listener` | "tobefix" keyword |
+| `tobefixed-listener` | "tobefix" keyword |
 | `tobetested-listener` | "tobetested" keyword |
 | `tobenoted-listener` | "tobenoted" keyword |
 | `definitions-listener` | Definition-related terms |

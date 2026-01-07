@@ -2,8 +2,8 @@
 
 # Hook: Listens for "tobefix" keyword in user prompts
 # Actions:
-#   - "tobefix" + description → ADD item to TOBEFIX.md
-#   - "tobefix done" / "done tobefix" + ID → REMOVE item from TOBEFIX.md
+#   - "tobefix" + description → ADD item to TOBEFIXED.md
+#   - "tobefix done" / "done tobefix" + ID → REMOVE item from TOBEFIXED.md
 #   - "check tobefix" / "tobefix check" / "what tobefix" → SEARCH/LIST items
 
 # Read the prompt from Claude Code
@@ -18,7 +18,7 @@ if echo "$prompt" | grep -qi "tobefix"; then
     jq -n '{
       "hookSpecificOutput": {
         "hookEventName": "UserPromptSubmit",
-        "additionalContext": "TOBEFIX DONE: The user marked a tobefix item as done. Find the item in docs/TOBEFIX.md by ID (F-XXXX) or by matching description. Remove the entire line from the file. Confirm what was removed."
+        "additionalContext": "TOBEFIX DONE: The user marked a tobefix item as done. Find the item in docs/TOBEFIXED.md by ID (F-XXXX) or by matching description. Remove the entire line from the file. Confirm what was removed."
       }
     }'
 
@@ -27,7 +27,7 @@ if echo "$prompt" | grep -qi "tobefix"; then
     jq -n '{
       "hookSpecificOutput": {
         "hookEventName": "UserPromptSubmit",
-        "additionalContext": "TOBEFIX CHECK: The user wants to see tobefix items. Read docs/TOBEFIX.md and show relevant items. If they mentioned a topic/keyword, filter to matching items. Otherwise show all items with their IDs and sections."
+        "additionalContext": "TOBEFIX CHECK: The user wants to see tobefix items. Read docs/TOBEFIXED.md and show relevant items. If they mentioned a topic/keyword, filter to matching items. Otherwise show all items with their IDs and sections."
       }
     }'
 
@@ -36,7 +36,7 @@ if echo "$prompt" | grep -qi "tobefix"; then
     jq -n '{
       "hookSpecificOutput": {
         "hookEventName": "UserPromptSubmit",
-        "additionalContext": "TOBEFIX TRIGGERED: The user mentioned '\''tobefix'\''. Extract the task/issue they described and add it to docs/TOBEFIX.md. Format: `- [F-XXXX] (YYYY-MM-DD) task text` where XXXX is a random 4-char alphanumeric ID. Add under appropriate section. After adding, briefly confirm what was logged with its ID."
+        "additionalContext": "TOBEFIX TRIGGERED: The user mentioned '\''tobefix'\''. Extract the task/issue they described and add it to docs/TOBEFIXED.md. Format: `- [F-XXXX] (YYYY-MM-DD) task text` where XXXX is a random 4-char alphanumeric ID. Add under appropriate section. After adding, briefly confirm what was logged with its ID."
       }
     }'
   fi

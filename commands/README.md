@@ -19,7 +19,7 @@ Reusable slash commands for Claude Code sessions.
 Display the "to be" tracking files.
 
 ```
-/tobelist fix      # Show TOBEFIX.md
+/tobelist fix      # Show TOBEFIXED.md
 /tobelist test     # Show TOBETESTED.md
 /tobelist note     # Show TOBENOTED.md
 /tobelist all      # Show all three
@@ -55,7 +55,7 @@ Sync with shared `claude-commands` repo via git subtree pull/push.
 ### /tobestray
 Find stray code comments:
 - Search for TODO/TOBEFIX/FIXME comments in code
-- Check if they're tracked in TOBEFIX.md
+- Check if they're tracked in TOBEFIXED.md
 - Check for stale file references
 
 ## Creating New Commands

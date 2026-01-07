@@ -15,7 +15,7 @@ Hooks are shell scripts that:
 
 | Hook | Triggers On | Action |
 |------|-------------|--------|
-| `tobefix-listener.sh` | "tobefix" | Add/remove/search items in docs/TOBEFIX.md |
+| `tobefixed-listener.sh` | "tobefix" | Add/remove/search items in docs/TOBEFIXED.md |
 | `tobetested-listener.sh` | "tobetested" | Track test notes in docs/TOBETESTED.md |
 | `tobenoted-listener.sh` | "tobenoted" | Add notes to docs/TOBENOTED.md |
 
@@ -33,12 +33,12 @@ Hooks are shell scripts that:
 |------|-------------|--------|
 | `definitions-listener.sh` | definition-related terms | Check/update docs/DEFINITIONS.md |
 
-## tobefix-listener Actions
+## tobefixed-listener Actions
 
 | Pattern | Action |
 |---------|--------|
-| "tobefix" + description | ADD item to docs/TOBEFIX.md |
-| "tobefix done" / "done tobefix" | REMOVE item from docs/TOBEFIX.md |
+| "tobefix" + description | ADD item to docs/TOBEFIXED.md |
+| "tobefix done" / "done tobefix" | REMOVE item from docs/TOBEFIXED.md |
 | "check tobefix" / "show tobefix" | LIST/SEARCH items |
 
 ## Setup
@@ -54,7 +54,7 @@ Hooks must be registered in `.claude/settings.json`:
         "hooks": [
           {
             "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/tobefix-listener.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/tobefixed-listener.sh"
           }
         ]
       }
